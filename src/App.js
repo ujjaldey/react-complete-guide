@@ -1,3 +1,4 @@
+// import React from 'react';
 import Expenses from "./components/Expenses";
 
 function App() {
@@ -29,6 +30,14 @@ function App() {
       <Expenses items={expenses} />
     </div>
   );
+
+  // alternate way of returning the components in compare to JSX. This require to import React from 'react';
+  // otherwise we dont need to explicitly import React as it is done automatically under the hood
+  // return React.createElement(
+  //   'div',
+  //   {},
+  //   React.createElement('h2', {}, "Let's get started!"),
+  //   React.createElement(Expenses, { items: expenses }));
 }
 
 export default App;
