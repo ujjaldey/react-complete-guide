@@ -1,5 +1,5 @@
 import ExpenseDate from './ExpenseDate';
-import Card from './Card';
+import Card from '../UI/Card';
 import './ExpenseItem.css';
 
 function ExpenseItem(props) { // props holds all the attributes (key value pair) we pass when calling the component
