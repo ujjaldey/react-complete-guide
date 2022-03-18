@@ -1,6 +1,6 @@
 import './Card.css';
 
-function Card(props) {
+const Card = (props) => {
     // this is to receive the className parameter so that we can add custom css to the custom tag <Card>
     const classes = 'card ' + props.className;
 
