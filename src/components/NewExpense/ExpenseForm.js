@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './ExpenseForm.css';
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
 	const [enteredTitle, setEnteredTitle] = useState('');
 	const [enteredAmount, setEnteredAmount] = useState('');
 	const [enteredDate, setEnteredDate] = useState('');
@@ -53,7 +53,12 @@ const ExpenseForm = () => {
 			date: new Date(enteredDate)
 		};
 
-		console.log(expenseData);
+		// console.log(expenseData);
+
+		// we call the function in prop that we have used while using this component.
+		// calling this prop function, will actually call enteredExpenseData() defined in NexExpense component.
+		props.onSaveExpenseData(expenseData);
+
 		// clear up the fields
 		setEnteredTitle('');
 		setEnteredAmount('');
