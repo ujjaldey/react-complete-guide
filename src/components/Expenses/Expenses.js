@@ -3,14 +3,14 @@ import Card from '../UI/Card';
 import ExpenseItem from './ExpenseItem';
 
 const Expenses = (props) => {
-    return (
-        <Card className="expenses">
-            <ExpenseItem
-                title={props.items[0].title}
-                amount={props.items[0].amount}
-                date={props.items[0].date} />
-        </Card>
-    );
+	return (
+		<Card className='expenses'>
+			<ExpenseItem
+				title={props.items[0].title}
+				amount={props.items[0].amount}
+				date={props.items[0].date} />
+		</Card>
+	);
 }
 
 export default Expenses;
