@@ -8,9 +8,9 @@ const ExpenseItem = (props) => { // props holds all the attributes (key value pa
   // the names of these elements do not matter. But the convention is to use the name of the variable and set+name for the function
   const [title, setTitle] = useState(props.title);
 
-  const clickHandler = () => {
-    setTitle('Updated!');
-  };
+  // const clickHandler = () => {
+  //   setTitle('Updated!');
+  // };
 
   return (
     <Card className='expense-item'>
@@ -20,7 +20,7 @@ const ExpenseItem = (props) => { // props holds all the attributes (key value pa
         <div className='expense-item__price'>${props.amount}</div>
       </div>
       {/* dont add () to the function name. we are not executing it here, just adding a reference */}
-      <button onClick={clickHandler}>Change Title</button>
+      {/* <button onClick={clickHandler}>Change Title</button> */}
     </Card>
   );
 }
