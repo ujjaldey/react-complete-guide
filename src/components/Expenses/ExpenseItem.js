@@ -13,15 +13,17 @@ const ExpenseItem = (props) => { // props holds all the attributes (key value pa
   // };
 
   return (
-    <Card className='expense-item'>
-      <ExpenseDate date={props.date} />
-      <div className='expense-item__description'>
-        <h2>{title}</h2>
-        <div className='expense-item__price'>${props.amount}</div>
-      </div>
-      {/* dont add () to the function name. we are not executing it here, just adding a reference */}
-      {/* <button onClick={clickHandler}>Change Title</button> */}
-    </Card>
+    <li>
+      <Card className='expense-item'>
+        <ExpenseDate date={props.date} />
+        <div className='expense-item__description'>
+          <h2>{title}</h2>
+          <div className='expense-item__price'>${props.amount}</div>
+        </div>
+        {/* dont add () to the function name. we are not executing it here, just adding a reference */}
+        {/* <button onClick={clickHandler}>Change Title</button> */}
+      </Card>
+    </li>
   );
 }
 

@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import './Expenses.css';
 import Card from '../UI/Card';
-import ExpenseItem from './ExpenseItem';
+import ExpensesList from './ExpensesList';
 import ExpensesFilter from './ExpensesFilter';
 
 const Expenses = (props) => {
 	const [filteredYear, setFilteredYear] = useState('2020');
 
-	props.items.map(expense => console.log(expense));
+	// props.items.map(expense => console.log(expense));
 	const filterChangeHandler = selectedYear => {
 		setFilteredYear(selectedYear);
 	};
@@ -15,19 +15,6 @@ const Expenses = (props) => {
 	const filteredExpenses = props.items.filter(expense => {
 		return expense.date.getFullYear().toString() === filteredYear;
 	});
-
-	// we can assign JSX to variables
-	let expensesContent = <p>No expenses found</p>;
-
-	if (filteredExpenses.length > 0) {
-		expensesContent = filteredExpenses.map((expense) => (
-			<ExpenseItem
-				key={expense.id}
-				title={expense.title}
-				amount={expense.amount}
-				date={expense.date} />
-		));
-	}
 
 	// note () inside map(=>()) not map(=>{})
 	// always add the key= field so that the React know which components to update in case of change in the array
@@ -56,7 +43,7 @@ const Expenses = (props) => {
 							amount={expense.amount}
 							date={expense.date} />
 					)))} */}
-				{expensesContent}
+				<ExpensesList items={filteredExpenses} />
 			</Card>
 		</div>
 	);
